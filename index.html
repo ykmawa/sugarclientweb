@@ -1,154 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<!--
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢲⡄⠀⠀⠀⣯⠄⠀⠀⠀⠀⢸⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⡄⠀⠀⠹⣿⣦⠀⠀⠀⢸⣿⡆⠀⢠⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣤⠀⠀⣿⣿⣧⡄⠀⠘⣿⣿⡀⠘⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⢀⡀⠀⠀⣿⣿⣧⠀⢻⣿⣿⣆⠀⢀⣿⣿⡇⠀⣿⡇⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡃⠀⣿⣿⣠⡄⢿⣿⣿⣧⢸⣿⣿⣿⣆⢸⣿⣿⡇⠀⣿⣧⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠚⠀⠠⢎⠭⠤⢿⡘⠐⠟⠓⠥⢜⣿⣿⡿⢽⣿⣿⣿⣾⣿⣿⡀⠽⢷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠪⠙⢀⡤⢀⣀⡊⠀⠘⠀⠀⠋⠱⢿⣿⣿⣿⣿⣿⣿⣷⣶⣿⣷⠀⠀⣶⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⠀⢾⡜⠁⣴⣿⡯⠀⠀⠀⠀⠀⠀⠀⠈⠉⣴⣿⣿⣿⣿⣿⣿⣿⣷⣾⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⣟⣁⣸⣿⣿⡇⠀⠀⡀⢠⣠⡀⠀⠀⠀⠘⠙⠶⣯⣿⣿⣿⣿⣿⣿⣿⣟⠳⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣦⣨⣿⣿⣿⣷⣌⡇⠀⢡⠕⣼⣿⣿⣦⣍⡙⢿⣿⣇⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⠢⠁⢹⢯⣿⣷⣾⣿⡶⣟⣿⣳⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⣶⣿⣿⣿⣿⣿⣛⣛⣿⣿⣿⣿⣷⣷⣯⣗⣼⣿⣿⣿⣿⣿⣯⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⣿⣿⡧⠶⣾⣿⡿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⣿⣿⠿⠿⣧⢠⣿⣿⣇⡻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⣿⣿⡟⠀⠀⢀⣬⣷⠻⡍⠿⠿⠿⠿⠋⣽⢿⣿⣿⣿⣿⣷⠾⠛⠛⠁⢀⡀⣈⣻⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣷⠐⣺⣿⣿⣿⣦⣜⣻⣤⣦⣿⣿⣿⣷⣿⢿⣿⣭⣽⣿⣷⣾⣀⣩⣭⣄⣀⠉⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⡄⢧⠈⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣧⣿⣿⣿⣿⣿⣿⣿⣌⠿⡀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣿⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⣷⡄⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⢰⣟⣵⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⢟⠟⢿⣿⣿⣿⣿⣿⣿⣿⣇⣿⡿⠇⣿⣿⣿⣿⣿⣿⣿⣷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣯⣽⣿⣿⣿⣿⣿⣷⣿⣻⣿⢇⣺⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⢀⡼⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠓⠁⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⠐⢈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠁⣿⣿⣿⣿⡧⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⢠⣾⣿⡟⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣸⣩⣿⣿⣿⠿⡵⣿⣿⣿⣿⡿⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⢰⡾⣹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠙⣿⡻⠻⡟⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⢰⣿⣱⣿⡿⣿⣼⣿⢿⣿⣿⣿⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡽⠷⣦⣀⠀⠘⣿⣿⣿⢿⣿⣶⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⣿⡟⡼⢁⣿⣿⡏⣿⣿⣿⡏⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡌⠉⠀⠀⣿⡟⣿⣯⣹⣿⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⣸⠟⣼⢇⣾⣿⣿⣷⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣤⡀⠀⢿⣿⣿⣿⡄⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⣰⠏⢴⠏⡸⣽⣿⣿⠏⢻⣿⡏⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⣿⣿⢻⣿⡗⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣸⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
--->
-<head>
-  <meta charset="UTF-8">
-  <title>Sugar Client</title>
-  <style>
-    /* 全局样式 */
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f7f7f7;
-    }
-
-    /* 背景样式 */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('./bg.jpg');
-      background-size: cover;
-      background-position: center;
-      filter: blur(5px);
-      z-index: -1;
-    }
-
-    /* 容器样式 */
-    .container {
-      max-width: 600px;
-      margin: 50px auto 0;
-      text-align: center;
-      background-color: rgba(255, 255, 255, 0.8);
-      padding: 30px;
-      border-radius: 4px;
-    }
-
-    /* 标题和描述样式 */
-    h1 {
-      font-size: 36px;
-      color: #333;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 18px;
-      color: #666;
-      margin-bottom: 30px;
-    }
-
-    /* 下载链接样式 */
-    .btn {
-      display: inline-block;
-      padding: 12px 24px;
-      background-color: #000;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 4px;
-      font-size: 18px;
-      margin-top: 20px;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s ease-in-out;
-      z-index: 1;
-    }
-
-    .btn:hover {
-      background-color: #333;
-      color: #fff;
-      transform: scale(1.05);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    /* 隐藏文本样式 */
-    .hidden-text {
-      display: none;
-      margin-top: 20px;
-      font-size: 16px;
-      color: #666;
-    }
-
-    /* 显示文本样式 */
-    .show-text {
-      display: block;
-    }
-    
-    /* 添加 target="_blank" 样式 */
-    a[target="_blank"]::after {
-      content: "\2197";
-      margin-left: 5px;
-      font-size: 0.8em;
-    }
-  </style>
-  <!-- 引入 jQuery -->
-  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
-  <script>
-    $(document).ready(function() {
-      // 当按钮被点击时显示隐藏的文本
-      $(".bt1n").click(function() {
-        $(".hidden-text").addClass("show-text");
-      });
-    });
-  </script> 
-</head>
-<body>
-  <div class="container">
-    <h1>SugarClient下载</h1>
-    <p>欢迎下载最新的SugarClient整合包！</p>
-    <a href="https://github.com/ykmawa/sugar-client" class="btn">Github仓库</a>
-    <a href="https://almondcloud.cn/f/y8Wf4/setup.exe" class="btn">立即下载</a>
-    <a href="https://artisticmc.link/" class="btn">ArtisticCraft服务器</a>
-  </div>
-</body>
-</html>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"><title>主页 - Sugar Client</title><link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap"><link rel="stylesheet" href="assets/fonts/line-awesome.min.css"><link rel="stylesheet" href="assets/css/styles.min.css"></head><body><nav class="navbar navbar-light navbar-expand-md sticky-top border-primary border rounded border-1 shadow navbar-shrink py-3" id="mainNav"><div class="container"><a class="navbar-brand d-flex align-items-center" href="/"><span class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex justify-content-center align-items-center me-2 bs-icon"><i class="la la-cube"></i></span><span>Sugar Client</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navcol-1"><ul class="navbar-nav mx-auto"><li class="nav-item"></li><li class="nav-item"><a class="nav-link active" href="index.html">主页</a></li><li class="nav-item"><a class="nav-link" href="https://artisticmc.link/">ArtisticCraft服务器</a></li><li class="nav-item"></li><li class="nav-item"></li><li class="nav-item"></li><li class="nav-item"></li></ul><a class="btn btn-primary shadow" role="button" href="download.html">立即下载</a></div></div></nav><header class="bg-primary-gradient" style="height: 227.825px;"><div class="container pt-4 pt-xl-5"><div class="row pt-5" style="margin: -21px;"><div class="col-md-8 col-xl-6 text-center text-md-start mx-auto"><div class="text-center"><p class="fw-bold text-success mb-2">轻量、流畅的Minecraft整合包</p><h1 class="fw-bold">为您正式介绍：Sugar Client</h1></div></div><div class="col-12 col-lg-10 mx-auto"><div class="position-relative" style="display: flex;flex-wrap: wrap;justify-content: flex-end;"></div></div></div></div></header><section class="py-5" style="margin: -35px;padding: 43px 43px;"><div class="container py-4 py-xl-5"><div class="row mb-5"><div class="col-md-8 col-xl-6 text-center mx-auto"><h2>让人难以置信的流畅度</h2><p>死机、卡顿、过多的内存占用已经是过去式。使用SugarClient，您将获得最佳的性能</p></div></div><div class="row gy-4 gx-md-0 gy-md-0 row-cols-1 row-cols-md-2 row-cols-xl-3 d-md-flex d-xl-flex align-items-md-center"><div class="col offset-xl-2"><div class="card bg-light border-0"><div class="card-body p-4"><div class="d-flex justify-content-between"><div><h3 class="fw-bold mb-0">VirtualLuancher</h3><p>优化向整合包</p><h4 class="display-6 fw-bold">40fps</h4></div></div><div><ul class="list-unstyled"><li class="d-flex mb-2"><span class="bs-icon-xs bs-icon-rounded bs-icon-primary-light bs-icon me-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-lg">
+  <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"></path>
+</svg></span><span>流畅的帧数</span></li><li class="d-flex mb-2"><span class="bs-icon-xs bs-icon-rounded bs-icon-primary-light bs-icon me-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-lg">
+  <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"></path>
+</svg></span><span>丰富的Mod</span></li><li class="d-flex mb-2"><span class="bs-icon-xs bs-icon-rounded bs-icon-primary-light bs-icon me-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-lg">
+  <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"></path>
+</svg></span><span>内存优化</span></li></ul></div><a class="btn btn-primary d-block w-100" role="button" href="#">前往官网</a></div></div></div><div class="col"><div class="card text-white bg-primary border-0"><div class="card-body p-4"><div class="d-flex justify-content-between"><div><h3 class="fw-bold text-white mb-0">Sugar Client</h3><p>优化+实用向整合包</p><h4 class="display-6 fw-bold text-white">68fps</h4></div><div><span class="badge rounded-pill bg-primary text-uppercase bg-white-300">最佳选择</span></div></div><div><ul class="list-unstyled"><li class="d-flex mb-2"><span class="bs-icon-xs bs-icon-rounded bs-icon-semi-white bs-icon me-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-lg">
+  <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"></path>
+</svg></span><span>流畅的帧数</span></li><li class="d-flex mb-2"><span class="bs-icon-xs bs-icon-rounded bs-icon-semi-white bs-icon me-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-lg">
+  <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"></path>
+</svg></span><span>轻量的Mod</span></li><li class="d-flex mb-2"><span class="bs-icon-xs bs-icon-rounded bs-icon-semi-white bs-icon me-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-lg">
+  <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"></path>
+</svg></span><span>内存优化</span></li><li class="d-flex mb-2"><span class="bs-icon-xs bs-icon-rounded bs-icon-semi-white bs-icon me-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-lg">
+  <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"></path>
+</svg></span><span>快速的更新频率</span></li><li class="d-flex mb-2"><span class="bs-icon-xs bs-icon-rounded bs-icon-semi-white bs-icon me-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-lg">
+  <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"></path>
+</svg></span><span>更好的优化</span></li></ul></div><a class="btn btn-primary d-block w-100 bg-white-300" role="button" href="#">立即下载</a></div></div></div></div></div><p class="fw-normal text-center text-sm-center text-md-center text-lg-center text-xl-center text-xxl-center justify-content-center align-items-center align-content-center" style="filter: brightness(200%) contrast(0%) grayscale(0%);position: relative;margin: auto;margin-right: 6px;height: auto;width: auto;text-align: center;text-shadow: 0px 3px 10px;">以上结果均为使用Nvidia GTX 960M + Intel Core i5-6300HQ进行多轮测试后得出，有一定的参考价值</p></section><section></section><section></section><section class="py-5 mt-5" style="height: 1691.4px;"><div class="container py-5"><div class="row mb-5"><div class="col-md-8 col-xl-6 text-center mx-auto"><p class="fw-bold text-success mb-2"></p><h2 class="fw-bold">一些用户使用后的评价</h2><p class="text-muted">不吹不黑，还是不错的</p></div></div><div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 d-sm-flex justify-content-sm-center"><div class="col mb-4"><div class="d-flex flex-column align-items-center align-items-sm-start"><p class="bg-light border rounded border-light p-4">我这土豆机子能跑到50fps+，而且整合包还自带R键整理、JEI等模组，可以说是流畅又实用</p><div class="d-flex"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" src="assets/img/team/b_5758c2d7b1139a62eba99411b462aca6.jpg"><div><p class="fw-bold text-primary mb-0">米米币批发</p><p class="text-muted mb-0">普通玩家</p></div></div></div></div><div class="col mb-4"><div class="d-flex flex-column align-items-center align-items-sm-start"><p class="bg-light border rounded border-light p-4">臭群友，自己今年七夕不会又是一个人过吧~难道说还是自己窝在家里打游戏？亦或者是玩玩萝莉控类型的galgame吗，真是变态呢，杂鱼群友，是不是还在幻想能有一个萝莉魅魔用白丝小脚踩在你的**上然后居高临下的看着你吧？杂鱼~♡杂鱼~♡像这样的臭群友根本不配过七夕节哦~每天就沉浸在对做爱的幻想中就好了♡顶多允许你对着你想象中幼小的萝莉身体用手自己弄出来哦~真是杂鱼~♡ <br>阿拉，杂鱼群友，看你这么变态的渴望那勉强用脚帮一下你好了~ <br>阿拉，真是杂鱼呢~♡被黑丝小脚踩两下就已经爽到不行了吗~看看哦，射的满脚都是呢臭群友（说着把沾满**的脚在你胸口晃了下然后踩在了肚皮上，奇异的触感和丝袜的顺滑再次传向全身） <br>杂鱼~♡群友今天可要躺好了哦~毕竟身为萝莉魅魔，就算被你这种下等生物召唤出来的话，即使是大叔再怎么杂鱼也要满足大叔的下作诉求（同时用心形的尾巴尖从大腿满满的滑向了**，翘着的二郎腿放下，顺着黑丝小脚两脚夹住了再次坚挺的**） <br>咦惹，杂鱼群友的表情真是下流呢，是非常~非常舒服吗？（微笑歪头一脸嫌弃样） <br>真是废物啊，才这么几下子就不行了，平时一个人在家当阴湿宅男的时候是不是经常手冲呀~可怜的只知道手冲的发情的虫子~真是无可救药，那就勉强帮帮你好了~杂鱼~♡（黑丝脚趾完美地包裹了前端的敏感部位，充分的**正好的前脚掌夹住**之后前后不断滑动的润滑） <br>杂鱼群友~（马上要喷发出来的时候忽然停下） <br>“诶！为什么忽然... ” <br>杂鱼群？~讲讲你怎么变成是一个扭曲变态萝莉控的~或者... （一脸挑逗样，轻轻伸出舌头舔了一下上唇，心形尾巴尖轻轻扫了几下小腹） <br>用你那卑劣的发声器官祈求一下你面前的女王大人？嗯~？杂鱼~♡杂鱼~♡ <br>（） <br>这就对了嘛，杂鱼群友~，真不愧是杂鱼呢~ <br>（随着身体的一阵抖动，面前的萝莉变得索然无味） <br>噫，臭群友又弄得满脚都是了，那这双袜子就便宜你好了~ <br>（嫌弃的笑，脱下袜子甩在**上，残留的特有魅魔膻味儿和浓郁的萝莉奶香让人意识到这并不是一场幻梦） <br>七夕快乐哦~杂~鱼~群~友~♡</p><div class="d-flex"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" src="assets/img/team/b_24160a07f653007ad78bca452fb1c932.jpg"><div><p class="fw-bold text-primary mb-0">TWSFTS_07007</p><p class="text-muted mb-0">VirtualLuancher作者</p></div></div></div></div><div class="col mb-4"><div class="d-flex flex-column align-items-center align-items-sm-start"><p class="bg-light border rounded border-light p-4">@TWSFTS_07007 火速上服被我干死，，，</p><div class="d-flex"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" src="assets/img/team/b_73489ebc6d8739587a0b2b13d0e12190.jpg"><div><p class="fw-bold text-primary mb-0">Syphlix Oauthes</p><p class="text-muted mb-0">ArtisticCraft KCP加速技术提供者</p></div></div></div></div></div></div></section><section class="py-5"><div class="container"><div class="border rounded border-white d-flex flex-column justify-content-between align-items-center flex-lg-row bg-primary-gradient p-4 p-lg-5"><div class="text-center text-lg-start py-3 py-lg-1"><h2 class="fw-bold mb-2">订阅Sugar Client的新闻消息！</h2><p class="mb-0">或者加入QQ群：<span style="color: rgb(0, 0, 0);">913294218</span></p></div><form class="d-flex justify-content-center flex-wrap flex-lg-nowrap" method="post"><div class="my-2"><input class="border rounded-pill shadow-sm form-control" type="email" name="email" placeholder="Your Email"></div><div class="my-2"><button class="btn btn-primary shadow ms-2" type="submit">订阅</button></div></form></div></div></section><footer class="bg-primary-gradient"><div class="container py-4 py-lg-5"><div class="row justify-content-center"><div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column"><h3 class="fs-6 fw-bold">其他页面</h3><ul class="list-unstyled"><li><a href="#">特别鸣谢</a></li><li><a href="#">立即下载</a></li><li></li></ul></div><div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column"><h3 class="fs-6 fw-bold">友情链接</h3><ul class="list-unstyled"><li><a href="http://virtuallauncher.rth1.link/">VirtualLuancher官网</a></li><li></li></ul></div><div class="col-lg-3 text-center text-lg-start d-flex flex-column align-items-center order-first align-items-lg-start order-lg-last"><div class="fw-bold d-flex align-items-center mb-2"><span class="bs-icon-sm bs-icon-circle bs-icon-primary d-flex justify-content-center align-items-center bs-icon me-2"><i class="la la-cube"></i></span><span>Sugar Client</span></div><p class="text-muted">轻量、流畅的Minecraft整合包</p></div></div><hr><div class="text-muted d-flex justify-content-between align-items-center pt-3"><p class="mb-0">Copyright © 2023 TBSTCraft</p></div></div></footer><script src="assets/bootstrap/js/bootstrap.min.js"></script><script src="assets/js/script.min.js"></script></body></html>
